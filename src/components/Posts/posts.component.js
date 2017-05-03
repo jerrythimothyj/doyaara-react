@@ -8,7 +8,7 @@ class Posts extends Component {
   render() {
     return (
       <div>
-        <h1>Posts {this.props.posts && this.props.posts.data.length}</h1>
+        <h1>Posts {this.props.posts && this.props.posts.length}</h1>
       </div>
     );
   }
@@ -23,8 +23,11 @@ const mapStateToProps = state => ({
   posts: state.post.items
 });
 
-const mapDispatchToProps = {
-  getAllPosts
-};
+const mapDispatchToProps = dispatch => ({
+  getAllPosts: () => dispatch(getAllPosts())
+});
+// const mapDispatchToProps = {
+//   getAllPosts
+// };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Posts);

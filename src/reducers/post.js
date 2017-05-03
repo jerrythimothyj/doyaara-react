@@ -4,7 +4,7 @@ export default (state = {}, action) => {
       console.info("Loading Posts..", action);
       return {
         ...state,
-        items: action.payload.posts
+        items: action.payload
       };
     default:
       break;

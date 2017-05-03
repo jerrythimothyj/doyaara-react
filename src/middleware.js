@@ -13,7 +13,9 @@ const promiseMiddleware = store => next => action => {
     });
   } else {
     next(action);
+    console.info("Running Else");
   }
+  // next(action);
 };
 
 export default promiseMiddleware;
