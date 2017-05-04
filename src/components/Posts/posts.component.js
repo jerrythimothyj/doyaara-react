@@ -1,14 +1,14 @@
 import { connect } from "react-redux";
-import posts from "../../apis";
-import { getAllPosts } from "../../actions/post-actions";
-
+import { getAllPosts } from "../../actions/posts.action";
+import FBPost from "./post";
 import React, { Component } from "react";
 
 class Posts extends Component {
   render() {
     return (
       <div>
-        <h1>Posts {this.props.posts && this.props.posts.length}</h1>
+        {this.props.posts &&
+          this.props.posts.map(post => <FBPost post={post} key={post.id} />)}
       </div>
     );
   }
